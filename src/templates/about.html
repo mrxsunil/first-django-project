@@ -1,21 +1,11 @@
 {% extends 'base.html' %}
 {% block content %} 
         
-<h1>This is extended about page </h1>
+<h1>About page </h1>
 
-<p>
-    {{ my_text }} , {{ my_number }}
-</p>
-
-
-<ul>
-    <li>Item 1</li>
-    <li>Item 2</li>
-</ul>
-<ul>
-{% for my_sub_item in my_list %}
-<li>{{ my_sub_item }}</li>
-{% endfor %}
-</ul>
+This Simple django app contains 3 apps
+<p>=> Pages</p>
+<p>=> Product</p>
+<p>=> Blog</p>
 
 {% endblock %}

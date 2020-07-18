@@ -1,8 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
 
-{% for instance in object_list %}
-    <p>{{ instance.id }} - <a href='{{ instance.get_absolute_url }}'>{{ instance.title }}</a></p>
-{% endfor %}
+<!-- {{ object_list }} -->
+<h2>List of all Articles</h2>
+<a href="./create">Create New</a>
 
+<table>
+    <tr> 
+        <td>--Article ID--</td> 
+        <td>--Article Name--</td>
+        <td>--Edit--</td>
+        <td>--Delete--</td>
+    </tr>    
+{% for instance in object_list %}
+    
+    <tr> 
+        <td>{{ instance.id }} </td> 
+        <td><a href='{{ instance.get_absolute_url }}'> {{ instance.title }} </a> </td>
+        <td><a href="{{ instance.get_absolute_url }}/update"> Edit</a></td>
+        <td><a href="{{ instance.get_absolute_url }}/delete"> Delete</a></td>
+      
+    </tr>
+{% endfor %}
+</table>
 {% endblock %}
+

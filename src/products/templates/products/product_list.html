@@ -2,10 +2,26 @@
 {% block content %}
 
 <!-- {{ object_list }} -->
+<h2>List of all Products</h2>
+<a href="./create">Create New</a>
 
+<table>
+    <tr> 
+        <td>--Product ID--</td> 
+        <td>--Product Name--</td>
+        <td>--Edit--</td>
+        <td>--Delete--</td>
+    </tr>    
 {% for instance in object_list %}
-    <p> {{ instance.id }} - <a href='{{ instance.get_absolute_url }}'> {{ instance.title }} </a></p>
+    
+    <tr> 
+        <td>{{ instance.id }} </td> 
+        <td><a href='{{ instance.get_absolute_url }}'> {{ instance.title }} </a> </td>
+        <td><a href="{{ instance.get_absolute_url }}/update"> Edit</a></td>
+        <td><a href="{{ instance.get_absolute_url }}/delete"> Delete</a></td>
+      
+    </tr>
 {% endfor %}
-
+</table>
 {% endblock %}
 

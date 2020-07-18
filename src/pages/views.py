@@ -22,9 +22,9 @@ def about_view(request, *args, **kwargs):
     # functions an HTML code
     # return HttpResponse("<h1>Hello World</h1>") # String of HTML code 
     my_context = {
-        "my_text": "This is about me",
-        "my_number" : 123,
-        "my_list" : [1,2,3,4,5,5]
+        # "my_text": "This is about me",
+        # "my_number" : 123,
+        # "my_list" : [1,2,3,4,5,5]
     }
     return render(request,"about.html",my_context)
 
