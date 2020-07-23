@@ -2,7 +2,12 @@ version: '3.4'
 
 services:
   web:
-    build: .
+    build:
+      context: .
+      args:
+        DJANGO_SUPERUSER_PASSWORD: ${DJANGO_SUPERUSER_PASSWORD:-mypassword}
+        DJANGO_SUPERUSER_USERNAME: ${DJANGO_SUPERUSER_USERNAME:-iamadmin}
+        DJANGO_SUPERUSER_EMAIL: ${DJANGO_SUPERUSER_EMAIL:-admin@example.org}
     command: >
       sh -c "echo -e 'starting the server now' && python ./src/manage.py runserver 0.0.0.0:8000"
             
