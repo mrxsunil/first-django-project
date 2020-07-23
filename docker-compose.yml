@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  web:
+    build: .
+    command: >
+      sh -c "echo -e 'starting the server now' && python ./src/manage.py runserver 0.0.0.0:8000"
+            
+    ports:
+      - 8000:8000
+
